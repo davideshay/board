@@ -56,11 +56,11 @@ RUN apk add -u --no-cache \
     unzip \
     tzdata && \
     sed -i 's/nobody/nginx/g' /etc/php7/php-fpm.d/www.conf && \
-    rm /etc/nginx/conf.d/default.conf                       
+    rm /etc/nginx/http.d/default.conf                       
 
 # after initial setup of deps to improve rebuilding speed
 ENV ROOT_DIR=/var/lib/nginx/html \
-    CONF_FILE=/etc/nginx/conf.d/restyaboard.conf \
+    CONF_FILE=/etc/nginx/http.d/restyaboard.conf \
     SMTP_SERVER=smtp_relay \
     SMTP_PORT=587 \
     TZ=Etc/UTC
