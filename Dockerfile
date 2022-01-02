@@ -1,4 +1,4 @@
-FROM alpine:3.12 AS build
+FROM alpine:3.15.0 AS build
 RUN apk add -u --no-cache npm php7
 
 WORKDIR /code
@@ -31,7 +31,7 @@ COPY Gruntfile.js .
 RUN npm run docker:prebuild
 
 
-FROM alpine:3.12
+FROM alpine:3.15.0
 
 # update & install package
 RUN apk add -u --no-cache \
